@@ -9,10 +9,34 @@ Logical Comment: Reverse Alternative Character Of String Array
 import java.util.*;
 class Short
 {
+	static int i,j,no;
+	static String val;
+
+	static void MainLogic()
+	{
+
+			for(i=0; i<val.length(); i++)
+			{	
+				if(i%no==no-1)
+				{
+						for(j=i; j>i-no; j--)
+						{
+						System.out.print(val.charAt(j));
+						}	
+				}
+				else if(i == val.length() - (val.length()%no))
+				{
+					for(j=i; j<val.length(); j++)
+					{
+					System.out.print(val.charAt(j));
+					}
+				}
+			}
+
+	}
+		
 	public static void main(String []args)
 	{
-		int i,j,no;
-		String val;
 		
 
 		Scanner sc = new Scanner(System.in);
@@ -30,24 +54,8 @@ class Short
 		else
 		{
 		System.out.print("\n");
-		for(i=0; i<val.length(); i++)
-		{
-			if(i%no==no-1)
-			{
-					for(j=i; j>i-no; j--)
-					{
-					System.out.print(val.charAt(j));
-					}	
-			}
-			else if(i == val.length() - (val.length()%no))
-			{
-				for(j=i; j<val.length(); j++)
-				{
-				System.out.print(val.charAt(j));
-				}
-			}
+		MainLogic();
 		}
-	}
 
 	}
 }
